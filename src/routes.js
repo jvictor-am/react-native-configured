@@ -1,6 +1,4 @@
-// import { createAppContainer } from '@react-navigation';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Main from './pages/Main';
@@ -10,18 +8,24 @@ const AppStack = createStackNavigator();
 
 export default function Routes() {
   return (
-    <NavigationContainer>
-      <AppStack.Navigator
-        screenOptions={{
-          headerTitleAlign: 'center',
-          headerStyle: { backgroundColor: '#00FF7F' },
-          headerTintColor: '#000',
-          headerBackTitleVisible: false,
-        }}
-      >
-        <AppStack.Screen name="Teste01" component={Main} />
-        <AppStack.Screen name="Teste02" component={User} />
-      </AppStack.Navigator>
-    </NavigationContainer>
+    <AppStack.Navigator
+      screenOptions={{
+        headerTitleAlign: 'center',
+        headerStyle: { backgroundColor: '#00FF7F' },
+        headerTintColor: '#000',
+        headerBackTitleVisible: false,
+      }}
+    >
+      <AppStack.Screen
+        name="Tela01"
+        component={Main}
+        options={{ title: 'Tela01' }}
+      />
+      <AppStack.Screen
+        name="Tela02"
+        component={User}
+        options={{ title: 'Tela02' }}
+      />
+    </AppStack.Navigator>
   );
 }
